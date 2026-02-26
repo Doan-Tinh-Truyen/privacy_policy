@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính Sách Bảo Mật - Sổ Tay Cá Nhân</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #03A9F4 0%, #0288D1 100%);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .header-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+            border: 1px solid #e9ecef;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background-color: #e3f2fd;
+            padding: 18px 24px;
+            border-bottom: 1px solid #bbdefb;
+        }
+
+        .card-title {
+            color: #03A9F4;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        /* Text Styles */
+        .paragraph {
+            margin-bottom: 16px;
+            text-align: justify;
+            font-size: 15px;
+            color: #444;
+        }
+
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #555;
+            margin: 20px 0 12px 0;
+            padding-bottom: 6px;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .bullet-point {
+            display: flex;
+            margin-bottom: 10px;
+            padding-left: 8px;
+        }
+
+        .bullet-icon {
+            color: #03A9F4;
+            margin-right: 12px;
+            font-size: 8px;
+            margin-top: 8px;
+        }
+
+        .bullet-text {
+            flex: 1;
+            font-size: 15px;
+            color: #444;
+        }
+
+        .important-note {
+            background-color: #ffebee;
+            border: 1px solid #ffcdd2;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .important-icon {
+            color: #f44336;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .important-text {
+            color: #c62828;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        /* Contact Info */
+        .contact-card {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .contact-value {
+            color: #03A9F4;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .contact-note {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 12px;
+            border-radius: 6px;
+            font-style: italic;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        /* Effective Date */
+        .effective-date {
+            background-color: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .date-icon {
+            color: #03A9F4;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .date-text {
+            color: #03A9F4;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 30px 15px;
+                border-radius: 12px;
+            }
+            
+            .header-title {
+                font-size: 24px;
+            }
+            
+            .card {
+                border-radius: 12px;
+            }
+            
+            .card-content {
+                padding: 18px;
+            }
+            
+            .card-title {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 25px 15px;
+            }
+            
+            .header-title {
+                font-size: 20px;
+            }
+            
+            .header-subtitle {
+                font-size: 14px;
+            }
+            
+            .paragraph, .bullet-text {
+                font-size: 14px;
+            }
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #e0e0e0;
+            }
+            
+            .card {
+                background-color: #1e1e1e;
+                border-color: #333;
+            }
+            
+            .card-header {
+                background-color: rgba(33, 150, 243, 0.1);
+                border-color: #333;
+            }
+            
+            .paragraph, .bullet-text {
+                color: #ccc;
+            }
+            
+            .subsection-title {
+                color: #aaa;
+                border-color: #444;
+            }
+            
+            .contact-card {
+                background-color: #252525;
+                border-color: #444;
+            }
+            
+            .contact-label {
+                color: #ccc;
+            }
+            
+            .important-note {
+                background-color: rgba(244, 67, 54, 0.1);
+                border-color: #d32f2f;
+            }
+            
+            .important-text {
+                color: #ff8a80;
+            }
+            
+            .contact-note {
+                background-color: rgba(76, 175, 80, 0.1);
+                color: #81c784;
+            }
+            
+            .effective-date {
+                background-color: rgba(33, 150, 243, 0.1);
+                border-color: #333;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="header-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h1 class="header-title">Chính Sách Bảo Mật</h1>
+            <p class="header-subtitle">
+                Bảo vệ quyền riêng tư của bạn là ưu tiên hàng đầu. Chúng tôi cam kết bảo vệ dữ liệu cá nhân của bạn.
+            </p>
+        </div>
+
+        <!-- Section 1: Introduction -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-info-circle"></i>
+                    <span>1. Giới Thiệu</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <p class="paragraph">
+                    Chào mừng bạn đến với ứng dụng Sổ tay cá nhân. Chính sách Bảo mật này được thiết kế để giải thích một cách minh bạch cách chúng tôi xử lý thông tin trong quá trình bạn sử dụng ứng dụng.
+                </p>
+                <p class="paragraph">
+                    Việc bạn sử dụng ứng dụng đồng nghĩa với việc bạn đã đọc, hiểu và đồng ý với mọi điều khoản được nêu trong Chính sách này. Nếu bạn không đồng ý với bất kỳ phần nào của Chính sách này, vui lòng ngừng sử dụng ứng dụng ngay lập tức.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 2: Core Principles -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>2. Nguyên Tắc Thu Thập Dữ Liệu Cốt Lõi</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Tối thiểu hóa: Chỉ thu thập thông tin cần thiết tối thiểu để ứng dụng hoạt động chức năng.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Minh bạch: Giải thích rõ ràng những gì chúng tôi thu thập và lý do.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Bảo mật: Mã hóa dữ liệu để bảo vệ thông tin.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Kiểm soát của Người dùng: Bạn có quyền kiểm soát dữ liệu của mình.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Information We Don't Collect -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-ban"></i>
+                    <span>3. Thông Tin Chúng Tôi Không Thu Thập</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="important-note">
+                    <div class="important-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="important-text">
+                        Chúng tôi KHÔNG THU THẬP, KHÔNG LƯU TRỮ, và KHÔNG CÓ KHẢ NĂNG TRUY CẬP hay CAN THIỆP vào bất kỳ nội dung cá nhân nào bạn nhập vào ứng dụng.
+                    </div>
+                </div>
+                
+                <p class="paragraph">Điều này bao gồm nhưng không giới hạn:</p>
+                
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Nội dung ghi chú, nhật ký cá nhân, tính toán.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Danh sách công việc, kế hoạch, lịch trình.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Hình ảnh, tệp tin đính kèm mà bạn chọn để lưu trữ.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Mã PIN, mật khẩu hoặc phương thức xác thực cá nhân do bạn thiết lập.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Bất kỳ thông tin nhận dạng cá nhân nào khác.</div>
+                </div>
+                
+                <p class="paragraph">
+                    Tất cả dữ liệu nêu trên được lưu trữ cục bộ và duy nhất trên thiết bị của bạn, được bảo vệ bằng mã hóa. Chúng tôi không có cơ chế thu thập hoặc chuyển dữ liệu này đến bất kỳ máy chủ nào.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 4: Information Collection and Usage -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-database"></i>
+                    <span>4. Thông Tin Được Thu Thập và Mục Đích Sử Dụng</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="subsection-title">Dữ Liệu Liên Quan Đến Quảng Cáo</div>
+                
+                <p class="paragraph">
+                    Ứng dụng hiển thị quảng cáo thông qua các nền tảng quảng cáo. Với tư cách là nhà phát triển, chúng tôi thu thập và chia sẻ thông tin ẩn danh với các đối tác quảng cáo để:
+                </p>
+                
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Hiển thị quảng cáo phù hợp</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Đo lường hiệu quả quảng cáo</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Ngăn chặn lạm dụng</div>
+                </div>
+                
+                <p class="paragraph">
+                    Thông tin này có thể bao gồm Định danh Quảng cáo, thông tin thiết bị cơ bản, và tương tác với quảng cáo.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 5: App Permissions -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-cogs"></i>
+                    <span>5. Các Quyền Ứng Dụng và Mục Đích Sử Dụng Cụ Thể</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="subsection-title">Quyền Truy Cập Bộ Nhớ (Ảnh/Phương tiện):</div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Mục Đích Cụ Thể: Cho phép bạn chọn ảnh từ thư viện thiết bị để đính kèm hoặc tùy chỉnh giao diện cá nhân.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Phạm Vi Truy Cập: Ứng dụng chỉ truy cập vào những tệp phương tiện cụ thể mà bạn chủ động và rõ ràng cho phép thông qua hộp thoại chọn tệp của hệ thống.</div>
+                </div>
+
+                <div class="subsection-title">Quyền Gửi Thông Báo:</div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Mục Đích Cụ Thực: Để hiển thị nhắc nhở, thông báo về các sự kiện, công việc hoặc ghi chú quan trọng mà bạn đã tự thiết lập.</div>
+                </div>
+
+                <div class="subsection-title">Quyền Ghi Vào Bộ Nhớ:</div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Mục Đích Cụ Thể: Để tạo ra các tệp sao lưu, cho phép bạn bảo vệ dữ liệu của mình. Ứng dụng chỉ có quyền truy cập vào các tệp sao lưu trong quá trình tạo và khôi phục.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Information Sharing -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-share-alt"></i>
+                    <span>6. Chia Sẻ Thông Tin Của Bạn</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="important-note">
+                    <div class="important-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="important-text">
+                        Chúng tôi CAM KẾT KHÔNG BAO GIỜ bán, cho thuê, hoặc chia sẻ bất kỳ một nội dung cá nhân nào mà bạn tạo trong app với bất kỳ bên thứ ba nào.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: Data Security -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-lock"></i>
+                    <span>7. Bảo Mật Dữ Liệu & Các Rủi Ro Đặc Thù</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="subsection-title">7.1. Biện Pháp Bảo Mật</div>
+                <p class="paragraph">
+                    Chúng tôi sử dụng các thư viện mã hóa tiêu chuẩn công nghiệp trong ứng dụng để bảo vệ dữ liệu được lưu trữ cục bộ trên thiết bị của bạn.
+                </p>
+
+                <div class="subsection-title">7.2. Cảnh Báo Quan Trọng về Tính Năng Bảo Vệ bằng Mã PIN</div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Ứng dụng cung cấp tính năng bảo vệ bằng mã PIN như một lớp bảo mật bổ sung tùy chọn.</div>
+                </div>
+                
+                <div class="important-note">
+                    <div class="important-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="important-text">
+                        Quan trọng: Mã PIN do bạn tự thiết lập và quản lý. Do thiết kế bảo mật cục bộ và mã hóa, chúng tôi hoàn toàn không có khả năng khôi phục hoặc đặt lại mã PIN nếu bạn quên.
+                    </div>
+                </div>
+                
+                <p class="paragraph">
+                    Trong trường hợp quên mã PIN, bạn sẽ không thể truy cập vào dữ liệu đã được bảo vệ trong ứng dụng. Phương án duy nhất để tiếp tục sử dụng ứng dụng là xóa hoàn toàn dữ liệu ứng dụng, điều này sẽ dẫn đến mất vĩnh viễn tất cả dữ liệu chưa được sao lưu.
+                </p>
+
+                <div class="subsection-title">7.3. Trách Nhiệm Của Người Dùng và Giới Hạn Trách Nhiệm</div>
+                
+                <div class="important-note">
+                    <div class="important-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="important-text">
+                        Vì dữ liệu cá nhân của bạn được lưu trữ hoàn toàn trên thiết bị của bạn, trách nhiệm bảo vệ cuối cùng thuộc về bạn. Bạn được khuyến nghị:
+                    </div>
+                </div>
+                
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Bảo vệ thiết bị vật lý của mình bằng các phương thức bảo mật.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Thường xuyên và chủ động thực hiện sao lưu dữ liệu quan trọng thông qua chức năng sao lưu của ứng dụng để phòng tránh mất mát dữ liệu từ bất kỳ nguyên nhân nào.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Ghi nhớ cẩn thận mã PIN hoặc mật khẩu do bạn tự đặt.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Cảnh giác với các ứng dụng độc hại và giữ cho hệ điều hành thiết bị của bạn luôn được cập nhật.</div>
+                </div>
+                
+                <p class="paragraph">
+                    Chúng tôi đã thực hiện các bước thương mại hợp lý để bảo vệ thông tin. Tuy nhiên, không có phương pháp truyền dẫn hoặc lưu trữ điện tử nào là an toàn 100%. Do đó, chúng tôi không thể đảm bảo hoặc cam kết tính bảo mật tuyệt đối của dữ liệu được lưu trữ cục bộ trên thiết bị của bạn.
+                </p>
+                <p class="paragraph">
+                    Chúng tôi không thể chịu trách nhiệm cho bất kỳ việc mất mát, tiết lộ, truy cập trái phép, hư hỏng hoặc phá hủy dữ liệu nào phát sinh từ các sự kiện ngoài tầm kiểm soát hợp lý của chúng tôi, bao gồm nhưng không giới hạn ở: việc quên mã PIN, trộm cắp hoặc mất mát thiết bị, hư hỏng phần cứng, lỗi của người dùng, hoặc hành động của phần mềm độc hại.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 8: User Rights -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-users"></i>
+                    <span>8. Quyền Của Bạn</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Truy Cập và Chỉnh Sửa: Bạn có thể xem, sửa đổi hoặc xóa bất kỳ dữ liệu nào bạn đã nhập thông qua giao diện Ứng dụng.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Xóa Dữ Liệu: Bạn có thể xóa toàn bộ dữ liệu Ứng dụng bất kỳ lúc nào bằng cách gỡ cài đặt Ứng dụng khỏi thiết bị của mình.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon"><i class="fas fa-circle"></i></div>
+                    <div class="bullet-text">Thu Hồi Quyền: Bạn có thể thu hồi các quyền đã cấp thông qua Cài đặt hệ thống trên thiết bị của mình, mặc dù điều này có thể ảnh hưởng đến chức năng của một số tính năng.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 9: Policy Changes -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>9. Thay Đổi Đối Với Chính Sách Bảo Mật Này</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <p class="paragraph">
+                    Chúng tôi có quyền cập nhật Chính sách Bảo mật của mình theo thời gian. Chúng tôi sẽ thông báo cho bạn về bất kỳ thay đổi nào bằng cách đăng Chính sách Bảo mật mới trên trang này và thông báo trong Ứng dụng. Chúng tôi sẽ cập nhật ngày "Có hiệu lực từ" ở cuối trang Chính sách này.
+                </p>
+                <p class="paragraph">
+                    Việc bạn tiếp tục sử dụng Ứng dụng sau khi các thay đổi đó có hiệu lực được coi là sự chấp nhận của bạn đối với Chính sách sửa đổi.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 10: Contact -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-headset"></i>
+                    <span>10. Liên Hệ Với Chúng Tôi</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <p class="paragraph">
+                    Nếu bạn có bất kỳ câu hỏi, thắc mắc hoặc yêu cầu nào liên quan đến Chính sách Bảo mật này hoặc các phương pháp bảo mật của chúng tôi, xin vui lòng liên hệ với chúng tôi qua:
+                </p>
+                
+                <div class="contact-card">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope" style="color: #03A9F4;"></i>
+                        <span class="contact-label">Email:</span>
+                    </div>
+                    <div class="contact-value">daimongtruongsinh@gmail.com</div>
+                    
+                    <div class="contact-note">
+                        Chúng tôi cam kết sẽ giải quyết mọi mối quan ngại của bạn một cách kịp thời và tôn trọng.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Effective Date -->
+        <div class="effective-date">
+            <div class="date-icon">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="date-text">Có hiệu lực từ: ngày 27 tháng 02 năm 2026</div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add ID to all cards for potential linking
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                const header = card.querySelector('.card-title span');
+                if (header) {
+                    const id = 'section-' + (index + 1);
+                    card.id = id;
+                }
+            });
+            
+            // Dark mode detection and toggle (optional enhancement)
+            function updateDarkMode() {
+                const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.body.classList.toggle('dark-mode', isDarkMode);
+            }
+            
+            // Listen for dark mode changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateDarkMode);
+            
+            // Initial check
+            updateDarkMode();
+        });
+    </script>
+</body>
+</html>
